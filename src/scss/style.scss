@@ -1,0 +1,16 @@
+@import "base/mixins";
+@import "base/global";
+@import "base/normalize";
+@import "base/variables";
+
+@import "libs/splide.min.css";
+
+@import "blocks/header";
+@import "blocks/main-page";
+@import "blocks/about-salon";
+@import "blocks/services";
+@import "blocks/masters";
+@import "blocks/map";
+@import "blocks/footer";
+
+@import "components/splide";

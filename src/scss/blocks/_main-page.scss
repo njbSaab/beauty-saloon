@@ -1,0 +1,23 @@
+.main_page {
+  height: auto;
+  width: 100%;
+  .title_group {
+    position: absolute;
+    right: rem(120px);
+    bottom: 10%;
+    padding: 0;
+    text-align: right;
+    max-width: rem(550px);
+    .title_main{
+        padding-bottom: rem(24px);
+    }
+  }
+  .main_page_wrapper {
+    position: relative;
+  }
+  img {
+    object-fit: none;
+    height: 100vh;
+    width: 100%;
+  }
+}

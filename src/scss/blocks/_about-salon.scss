@@ -1,0 +1,43 @@
+.about-salon {
+  position: relative;
+  padding-bottom: 100px;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    background-image: url("https://mirasalon.com.ua/wp-content/uploads/2021/09/main-bg-4.png");
+    top: 0;
+  }
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    text-align: end;
+    gap: 40px;
+  }
+  .splide {
+    max-width: 650px;
+    width: 100%;
+    height: 100%;
+  }
+  .splide__arrow{
+    background: linear-gradient(45deg, black, transparent);
+  }
+  .splide__arrow svg {
+    fill: use('light');
+  }
+  .splide__pagination__page{
+    background: linear-gradient(45deg, white, transparent);
+  }
+  .img_wrappaer {
+    height: 400px;
+  }
+  .splide__progress{
+    background: linear-gradient(45deg, transparent, black);
+  }
+  .splide__progress__bar{
+    background: linear-gradient(45deg, white, transparent);
+  }
+}

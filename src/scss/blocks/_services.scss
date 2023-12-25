@@ -1,0 +1,71 @@
+.services {
+  height: auto;
+  width: 100%;
+  position: relative;
+  padding: rem(100px 0);
+  .title-group {
+    text-align: start;
+  }
+  .title {
+    padding: rem(0);
+    text-align: start;
+  }
+  .services-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: linear-gradient(45deg, black, transparent);
+      width: 100%;
+      height: 40%;
+      bottom: 0;
+      left: 0;
+      transform: translate(0%, 100%);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transition: transform 0.3s ease;
+      &::after {
+        transform: translate(0%, 0%);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr rem(350px);
+    align-items: center;
+    justify-items: center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    background-image: url("https://mirasalon.com.ua/wp-content/uploads/2021/10/bg_price-right.png");
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(2, 324px);
+    gap: 48px;
+  }
+  .img_wrappaer {
+    img {
+      object-fit: cover;
+      height: 350px;
+    }
+  }
+}

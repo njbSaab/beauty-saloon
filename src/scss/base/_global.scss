@@ -1,0 +1,50 @@
+.title {
+  padding: rem(80px 0);
+  text-align: center;
+  @include fontSize(36);
+  margin: 0;
+}
+.title_main {
+  @include fontSize(45);
+  text-transform: initial;
+  margin: 0;
+}
+.dark {
+  color: use("dark");
+}
+.light {
+  color: use("light");
+}
+.light-opacity {
+  color: use("light", $a: 0.5);
+}
+.dark-opacity {
+  color: use("dark", $a: 0.5);
+}
+.title_description,
+.title_description-light {
+  @include fontSize(28);
+  @include fw(300);
+}
+.splide__progress__bar {
+  height: 3px;
+  background: #ccc;
+}
+.img_wrappaer {
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+.uk-container {
+  position: relative;
+  z-index: 1;
+}
+
+.uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
+  stroke: currentcolor;
+  fill: black !important;
+}
