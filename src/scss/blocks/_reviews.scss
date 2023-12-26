@@ -41,3 +41,24 @@
         @include fontSize(15);
     }
 }
+@include mediaMax(768px){
+    .reviews{
+        padding-bottom: 0px;
+        .title{
+            padding: rem(40px 0 20px);
+        }
+        .person_wrapper {
+            gap: 12px;
+        }
+    }
+}
+@include mediaMax(450px){
+    .reviews{
+        .person-review{
+            font-size: 12px;
+        }
+        .content-items-grid{
+            gap: 6px;
+        }
+    }
+}

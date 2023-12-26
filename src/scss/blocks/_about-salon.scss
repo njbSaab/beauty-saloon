@@ -63,3 +63,28 @@
     background: linear-gradient(45deg, white, transparent);
   }
 }
+@include mediaMax(1024px){
+  .about-salon{
+    .slider-wrapper{
+      flex: 1 0 50%;
+    }
+  }
+}
+@include mediaMax(450px){
+  .about-salon{
+    .title{
+      padding: px(40px 0 20px);
+    }
+    .content-wrapper{
+      display: flex;
+      flex-direction: column;
+    }
+    .slider-wrapper::after {
+      content: "";
+      width: 120%;
+      left: -25%;
+      top: -5%;
+      background: linear-gradient(145deg,rgba(0,0,0,.1),#fff);
+    }
+  }
+}

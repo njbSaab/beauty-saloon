@@ -25,6 +25,7 @@
 .title_description-light {
   @include fontSize(28);
   @include fw(300);
+  text-wrap: pretty
 }
 .splide__progress__bar {
   height: 3px;
@@ -57,4 +58,80 @@
     padding: 0;
     margin: 0;
     opacity: .5;
+    @include fontSize(16); 
+}
+
+@include mediaMax(1024px){
+  .title {
+    padding: rem(60px 0);
+    text-align: center;
+    @include fontSize(32);
+    margin: 0;
+  }
+  .title_main {
+    @include fontSize(38);
+  }
+  .title_description,
+  .title_description-light {
+    @include fontSize(24);
+  }
+  .person_name{
+    @include fontSize(20); 
+  }
+  .person_descrtiption{
+    @include fontSize(14); 
+  }
+  .person-review{
+    @include fontSize(13); 
+  }
+  
+
+}
+@include mediaMax(768px){
+  .title {
+    padding: rem(40px 0);
+    text-align: center;
+    @include fontSize(28);
+    margin: 0;
+  }
+  .title_main {
+    @include fontSize(32);
+  }
+  .title_description,
+  .title_description-light {
+    @include fontSize(20);
+  }
+  .person_name{
+    @include fontSize(18); 
+  }
+  .person_descrtiption{
+    @include fontSize(14); 
+  }
+  .person-review{
+    @include fontSize(12); 
+  }
+  .tips{
+    a{
+      @include fontSize(12); 
+    }
+  }
+}
+@include mediaMax(415px){
+  .title {
+    @include fontSize(28);
+    margin: 0;
+  }
+  .title_main {
+    @include fontSize(38);
+  }
+  .title_description,
+  .title_description-light {
+    @include fontSize(18);
+  }
+  .person_name{
+    @include fontSize(18); 
+  }
+  .person_descrtiption{
+    @include fontSize(13); 
+  }
 }

@@ -21,3 +21,20 @@
     width: 100%;
   }
 }
+@include mediaMax(768px){
+  .main_page {
+    .title_group {
+      position: absolute;
+      right: 5%;
+      max-width: 80%;
+    }
+  }
+}
+@include mediaMax(450px){
+  .main_page {
+    .title_group {
+      position: absolute;
+      right: 15px;
+    }
+  }
+}

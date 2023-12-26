@@ -102,6 +102,15 @@
   .dropdown-nav-menu a {
     margin-left: 15px;
   }
+  .overlay-blur{
+    height: 100vh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
 }
 
 
@@ -111,6 +120,36 @@
     background: transparent;
     .nav-item{
       display: none;
+    }
+  }
+}
+@include mediaMax(768px) {
+  .header{
+    padding: rem(20px 0);
+    background: transparent;
+    .nav-item{
+      display: none;     
+    }
+    .top-social{
+      display: none;
+    }
+    .uk-button-secondary{
+      width: 130px;
+    }
+    .uk-button{
+      font-size: 10px;
+    }
+  }
+}
+@include mediaMax(450px){
+  .header{
+    .uk-navbar-nav{
+      .btn-header{
+        display: none;
+      }
+      .overlay-content{
+        top: 10%;
+      }
     }
   }
 }

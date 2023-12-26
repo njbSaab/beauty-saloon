@@ -77,7 +77,7 @@
             </div>
 
             <div class="btn-wrapper">
-              <button class="uk-button uk-button-secondary">
+              <button class="uk-button uk-button-secondary btn-header">
                 <span>
                   Записатися
                 </span>
@@ -86,8 +86,10 @@
 
             <!-- onclick="toggleClassActive()" -->
 
-            <div class="btn-mobile-wrapper" onclick="openNav()">
-              <span class="btn-mobile"></span>
+            <div class="menu-trigger" id="menu-mobile" onclick="toggleClassActive()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
             {% include "components/mobile-menu.html" %} 
@@ -97,4 +99,5 @@
       </div>
     </div>
   </div>
+  <div class="overlay-blur"></div>
 </header>

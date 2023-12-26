@@ -1,6 +1,5 @@
 .masters {
   position: relative;
-  // background: use('dark');
   background: transparent;
   backdrop-filter: blur(5px);
   .title {
@@ -48,5 +47,38 @@
     width: 100%;
     height: auto;
   }
-
+}
+@include mediaMax(850px){
+  .masters{
+    .content-items-grid{
+      gap: rem(96px 96px);
+      grid-template-columns: repeat(2, rem(200px));
+    }
+  }
+}
+@include mediaMax(768px){
+  .masters{
+    .title{
+      padding: 40px 0;
+    }
+  }
+}
+@include mediaMax(450px){
+  .masters{
+    .title{
+      padding: 40px 0;
+    }
+    .content-items-grid{
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: end;
+      gap: rem(96px 48px);
+    }
+    .person_title_wrapper{
+      right: -10%;
+      bottom: -45%;
+    }
+    .img_wrappaer{
+      max-width: 150px;
+    }
+  }
 }

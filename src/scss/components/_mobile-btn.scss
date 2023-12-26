@@ -1,40 +1,164 @@
-.btn-mobile-wrapper{
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin: auto;
-    width: rem(24px);
-    height: rem(24px);
-    cursor: pointer;
-    display: none;
-    
-    .btn-mobile{
-      display: block;
-      width: 100%;
-      height: rem(2px);
-      background: linear-gradient(270deg ,rgba(0,0,0, .5) 0,rgba(255,255,255) 100%);   
-    
-      &::after, 
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: rem(2px);
-        background: use('black');
+// .btn-mobile-wrapper{
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     margin: auto;
+//     width: rem(24px);
+//     height: rem(24px);
+//     cursor: pointer;
+//     display: none;
 
-      }
-      &::after{
-        bottom: 0;       
-      }
-      &::before{
-        top: 0;
-      }
-    }
+//     .btn-mobile{
+//       display: block;
+//       width: 100%;
+//       height: rem(2px);
+//       background: linear-gradient(270deg ,rgba(0,0,0, .5) 0,rgba(255,255,255) 100%);   
+//       transition: transform .2 ease-in;
+
+    
+//       &::after, 
+//       &::before {
+//         content: '';
+//         position: absolute;
+//         width: 100%;
+//         height: rem(2px);
+//         background: use('black');
+//         transition: transform .2s ease-in;
+//       }
+//       &::after{
+//         bottom: 0;       
+//         transition: .2s ease-in;
+
+//       }
+//       &::before{
+//         top: 0;
+//         transition: .2s ease-in;
+//       }
+//     }
+          
+//     &.active{
+//       span{
+//         transition: transform .3s ease-in;
+//         background: transparent;
+
+//         &::before {
+//             top: 50%;
+//             transform: translateY(-50%) rotate(145deg);
+//             transition: top .1s transform .3s ease-in;
+//         }
+
+//         &::after {
+//             top: 50%;
+//             transform: translateY(-50%) rotate(-145deg);
+//             transition: top .1s ease transform .3s ease-in;
+
+//         }
+//       }
+//    }
+// }
+
+.menu-trigger
+.menu-trigger span {
+  display: inline-block;
+  box-sizing: border-box;
+  transition: all .5s ease;
+}
+.menu-trigger {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  margin: auto;
+  margin-left: 20px;
+  display: none;
+
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: use('black');
+  border-radius: 4px;
+  transition: all .5s ease;
+
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(0, -50%);
+  background: linear-gradient(270deg ,rgba(0,0,0, .5) 0,rgba(255,255,255) 100%);   
+  color: transparent;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+#menu-mobile::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 50px;
+  height: 50px;
+  margin: -29px 0 0 -29px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: all .5s ease;
+}
+#menu-mobile.active span:nth-of-type(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: all .5s ease;
+}
+#menu-mobile.active span:nth-of-type(2) {
+  left: 60%;
+  opacity: 0;
+  animation: active-menu12-bar02 .8s forwards;
+}
+@keyframes active-menu12-bar02 {
+  100% {
+    height: 0;
   }
+}
+#menu-mobile.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: all .5s ease;
+
+}
+#menu-mobile.active::after {
+  animation: active-menu12 .4s .25s forwards;
+}
+@keyframes active-menu12 {
+  0% {
+    border-color: transparent;
+    transform: rotate(0);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    transform: rotate(-680deg);
+  }
+}
 
 
 @include mediaMax(1024px) {
-    .btn-mobile-wrapper{
+    .menu-trigger{
     display: flex;
     }
 }
