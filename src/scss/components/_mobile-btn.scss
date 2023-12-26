@@ -1,0 +1,42 @@
+.btn-mobile-wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    width: rem(24px);
+    height: rem(24px);
+    cursor: pointer;
+    display: none;
+    
+    .btn-mobile{
+      display: block;
+      width: 100%;
+      height: rem(2px);
+      background: linear-gradient(270deg ,rgba(0,0,0, .5) 0,rgba(255,255,255) 100%);   
+    
+      &::after, 
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: rem(2px);
+        background: use('black');
+
+      }
+      &::after{
+        bottom: 0;       
+      }
+      &::before{
+        top: 0;
+      }
+    }
+  }
+
+
+@include mediaMax(1024px) {
+    .btn-mobile-wrapper{
+    display: flex;
+    }
+}
+  
+  

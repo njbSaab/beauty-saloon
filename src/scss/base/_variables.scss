@@ -1,4 +1,5 @@
 @include define-color("dark", #2a2a2a);
+@include define-color("black", black);
 @include define-color("light", #fff);
 
 // @include gradient("main-gra", linear-gradient(45deg, black, transparent))
@@ -6,3 +7,4 @@
 
 //   background-color: color("dark", $a: 0.5); // 50% прозрачность
 //    background-color: color("light", $a: 0.5)
+// background: linear-gradient(270deg ,rgba(0,0,0, .5) 0,rgba(255,255,255) 100%);

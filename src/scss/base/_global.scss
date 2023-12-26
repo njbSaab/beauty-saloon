@@ -48,3 +48,13 @@
   stroke: currentcolor;
   fill: black !important;
 }
+.person_name{
+    @include fontSize(24); 
+    @include fw(500);
+    margin: 0;
+}
+.person_descrtiption{
+    padding: 0;
+    margin: 0;
+    opacity: .5;
+}

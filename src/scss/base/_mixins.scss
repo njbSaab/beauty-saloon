@@ -67,21 +67,21 @@
 
 // Минимальная ширина экрана
 @mixin mediaMin($media) {
-  @media (min-width: $media + px) {
+  @media (min-width: #{$media}) {
     @content;
   }
 }
 
 // Максимальная ширина экрана
 @mixin mediaMax($media) {
-  @media (max-width: $media + px) {
+  @media (max-width: #{$media}) {
     @content;
   }
 }
 
 // Диапазон ширины экрана от минимальной до максимальной
 @mixin mediaMinMax($min, $max) {
-  @media (min-width: $min + px) and (max-width: $max + px) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
     @content;
   }
 }
@@ -103,23 +103,23 @@
 }
 
 // Миксин для настройки стилей полосы прокрутки в веб-приложениях
-// @mixin scrollbar($size: 10px, $use: $scrollbar-color) {
-//     &::-webkit-scrollbar {
-//         width: $size;
-//         height: $size;
-//         cursor: pointer;
-//     }
-//     &::-webkit-scrollbar-track {
-//         cursor: pointer;
-//         background: rgba($use, 0.3);
-//     }
-//     &::-webkit-scrollbar-thumb {
-//         background: rgba($use, 0.8);
-//     }
-//     &::-webkit-scrollbar-thumb:hover {
-//         background: rgba($use, 1);
-//     }
-// }
+@mixin scrollbar($size: 10px, $use: $scrollbar-color) {
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+        cursor: pointer;
+    }
+    &::-webkit-scrollbar-track {
+        cursor: pointer;
+        background: rgba($use, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba($use, 0.8);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba($use, 1);
+    }
+}
 
 // Миксин для настройки стилей полосы прокрутки с возможностью выбора цвета и закругления углов
 @mixin scrollbar-variable($size: 10px, $use: "base", $rounded: false) {

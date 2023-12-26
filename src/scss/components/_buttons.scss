@@ -1,0 +1,19 @@
+@keyframes fontScale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.uk-button-secondary {
+    width: rem(180px);
+    span{
+        display: block;
+        animation: fontScale 3s linear infinite;
+    }
+}

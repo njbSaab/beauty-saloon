@@ -21,18 +21,21 @@
               <a class="nav-link uk-button uk-button-link" href="#services"
                 >Послуги</a
               >
-              <div class="dropdown-nav-menu" uk-dropdown="animation: reveal-top; animate-out: true; duration: 700">
+              <div
+                class="dropdown-nav-menu"
+                uk-dropdown="animation: reveal-top; animate-out: true; duration: 700"
+              >
                 <ul class="uk-nav uk-dropdown-nav">
                   <li class="uk-nav-header">Зачіски</li>
-                    <li><a class="" href="#">Жіночі</a></li>
-                    <li><a class="" href="#">Чоловічі</a></li>
-                    <li><a class="" href="#">Дитячі</a></li>
-                    <li class="uk-nav-divider"></li>
-                    <li class="uk-nav-header">Інше</li>
-                    <li><a class="" href="#">Манікюр</a></li>
-                    <li><a class="" href="#">Візаж</a></li>
+                  <li><a class="" href="#">Жіночі</a></li>
+                  <li><a class="" href="#">Чоловічі</a></li>
+                  <li><a class="" href="#">Дитячі</a></li>
+                  <li class="uk-nav-divider"></li>
+                  <li class="uk-nav-header">Інше</li>
+                  <li><a class="" href="#">Манікюр</a></li>
+                  <li><a class="" href="#">Візаж</a></li>
                 </ul>
-            </div>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link uk-button uk-button-link" href="#about"
@@ -53,9 +56,7 @@
                 rel="nofollow"
                 href="https://www.instagram.com/backstage.ua/"
               >
-              <span class="material-symbols-outlined">
-                call
-                </span>
+                <span class="material-symbols-outlined"> call </span>
               </a>
               <a
                 class="uk-icon-button"
@@ -76,8 +77,21 @@
             </div>
 
             <div class="btn-wrapper">
-              <button class="uk-button uk-button-secondary">Записатися</button>
+              <button class="uk-button uk-button-secondary">
+                <span>
+                  Записатися
+                </span>
+              </button>
             </div>
+
+            <!-- onclick="toggleClassActive()" -->
+
+            <div class="btn-mobile-wrapper" onclick="openNav()">
+              <span class="btn-mobile"></span>
+            </div>
+
+            {% include "components/mobile-menu.html" %} 
+
           </ul>
         </div>
       </div>
