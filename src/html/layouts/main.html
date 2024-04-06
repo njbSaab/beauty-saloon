@@ -29,16 +29,28 @@
     <main class="content">{% block content %}{% endblock %}</main>
     {% include "components/footer.html" %}
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-         AOS.init();
-    </script>    
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/swiper-bundle.min.js"></script>
+    
+    <script type="text/javascript">
+      (function(d, w, s) {
+          var widgetHash = 'Cys9yKZPYyvOnAEUweXU',bow = d.createElement(s);bow.type = "text/javascript";
+          bow.async = true;
+          bow.src = '//widgets.binotel.com/b/bocrm/widgets/' + widgetHash + '.xjs';
+          var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bow, sn);
+      })(document, window, 'script');
+      </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit-icons.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1684982764/magicmouse-2.0.0.cdn.min.js"></script>
+
+
     <script src="./js/imports.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
+    <script src="./js/components-js/header.js"></script>
+    <script src="./js/components-js/mobile-menu.js"></script>
+
+    
   </body>
 </html>

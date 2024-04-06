@@ -1,3 +1,21 @@
+button,
+.nav-item a{
+  transition: filter;
+}
+.nav-item a:is(:hover, :focus-visible),
+button:is(:hover, :focus-visible){
+  filter:brightness(115%)
+}
+button:active{
+  filter: brightness(85%);
+}
+.transparent{
+  background: transparent;
+  .header .uk-navbar-nav>li>a,
+  .uk-button-link{
+    color: use('dark');
+  }
+}
 .title {
   padding: rem(80px 0);
   text-align: center;
@@ -134,4 +152,21 @@
   .person_descrtiption{
     @include fontSize(13); 
   }
+}
+
+.hover-circle {
+  position: relative;
+  &::before{
+    position: absolute;
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; 
+    background: black; 
+    pointer-events: none; 
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+}
+.nav-item:hover .hover-circle {
+  opacity: 0.7; 
 }

@@ -1,7 +1,9 @@
 @include define-color("dark", #2a2a2a);
 @include define-color("black", black);
 @include define-color("light", #fff);
-
+@include define-color("accent", #00613e);
+@include define-color("accent-opacity", #00613d8e);
+@include define-color("accent-transparent", #00613d37);
 // @include gradient("main-gra", linear-gradient(45deg, black, transparent))
 // background: linear-gradient(90deg, #000, #555, #aaa, #fff);
 
