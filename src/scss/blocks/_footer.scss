@@ -1,18 +1,36 @@
 .footer {
-  padding: rem(150px 0);
+  padding: rem(75px 0);
   background: linear-gradient(
-    360deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    180deg,
+    #192f281e 0%,
+    #192f28 100%
   );
+
   .footer_wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(50);
   }
   .social_group {
     display: flex;
-    flex-direction: column;
     gap: rem(12px);
+  }
+  .site-footer__col{
+    width: rem(350px);
+  }
+
+  .footer-logo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    transform: translateZ(1px);
+    img{
+      cursor: pointer; 
+      display: inline-block;
+      animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 2) alternate;
+    }
   }
   .contacts {
     padding: 0;
@@ -64,4 +82,7 @@
       gap: 50px;
     }
   }
+}
+.footer-logo img.animate { /* Класс для активации анимации */
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 2) alternate;
 }

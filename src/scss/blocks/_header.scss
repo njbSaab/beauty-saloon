@@ -1,15 +1,19 @@
 .header {
-  position: fixed;
   z-index: 99;
   width: 100vw;
-  background: linear-gradient(45deg, #00613e, transparent);
-  backdrop-filter: blur(5px);
-
+  position: fixed;
+  background: linear-gradient(180deg, transparent);
+  backdrop-filter: blur(3px);
+  height: 60px;
   .logo_wrapp {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: use(light);
+    color: use(dark);
+    background: linear-gradient(45deg, #192f28, transparent);
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
   }
 
   .logo_wrapp path {
@@ -19,6 +23,9 @@
   .btn-wrapper {
     display: flex;
     align-items: center;
+  }
+  .uk-button-secondary{
+    background: use(accent-dark);
   }
   .nav-item {
     a {
@@ -37,6 +44,7 @@
     align-items: center;
     gap: rem(12px);
   }
+
   .uk-icon-button {
     background: linear-gradient(45deg, white, transparent);
     transition: 0.3s ease-in;
@@ -66,36 +74,59 @@
       }
     }
   }
+
   .uk-navbar {
     align-items: center !important;
+    
+  }
+  .uk-navbar-nav{
+    transform: translateX(1000px);
+    transition: opacity .3s ease-in-out, transform .5s linear;
+    opacity: 0;
+  }
+
+  .uk-navbar.active {
+    .uk-navbar-nav{
+      transform: translateX(0px);
+      transition: opacity .3s ease-in-out, transform .5s linear;
+      opacity: 1;
+
+    }
+    .uk-navbar-left, .uk-navbar-right, [class*=uk-navbar-center]{
+      transition: width .5s linear;
+      &:after{
+        width: 90%;     
+        transition: width .5s linear;
+      }
+    }
   }
 
   .uk-navbar-nav > li > a {
-    color: use("light") !important;
+    color: use(light) !important;
     transition: all 0.5s ease;
-
+    font-size: 16px;
+    // border-radius: 50%;
     // &:hover {
     //   background: use("dark") !important;
     //   transition: all 0.5s ease;
     // }
   }
   .uk-icon-link {
-    color: use("dark") !important;
+    color: use(dark) !important;
+    font-size: 16px;
+
   }
 
-  // .uk-dropdown-nav li:not(uk-nav-header){
-  //     background: use("dark") !important;
-  //     transition: all 0.5s ease;
-  // }
+
   .dropdown-nav-menu {
-    // background: linear-gradient(90deg, black, transparent) !important;
-    background: linear-gradient(45deg, #000, transparent);
+    background: linear-gradient(45deg, #192f28, transparent);
     backdrop-filter: blur(5px) !important;
-    color: use("light") !important;
+    color: use(dark) !important;
     .uk-nav-header {
-      color: use("light") !important;
+      color: use(dark) !important;
     }
   }
+  
   .dropdown-nav-menu {
     top: 80px !important;
   }
@@ -111,9 +142,34 @@
       display: block;
     }
   }
+  .uk-navbar-left, .uk-navbar-right, [class*=uk-navbar-center]{
+    overflow: hidden;
+    gap: 30px;
+    padding-left: 30px;
+    position: relative;
+    transition: width .5s linear;
+    &:after{
+      position: absolute;
+      content: '';
+      right: 10%;
+      width: 35%;
+      height: 50%;
+      background: linear-gradient(180deg, #192f28, transparent);
+      z-index: -1;
+      transition: width .5s linear;
+    }
+    // &::before{
+    //     position: absolute;
+    //     content: '';
+    //     background-image: url('../../img/logo-without-cycle.svg');
+    //     width: 100px;
+    //     height: 100px;
+    //     left: 0;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //   }
+  }
 }
-
-
 @include mediaMax(1024px) {
   .header{
     padding: rem(20px 0);

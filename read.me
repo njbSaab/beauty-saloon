@@ -1,5 +1,5 @@
 перевая команда 
-suod npm i
+npm i
 ---------------
 npm run start - запуск
 npm run clean - очистка dist
@@ -16,16 +16,67 @@ rm -f package-lock.json
 Удалите папку node_modules:
 rm -rf node_modules
 
-
 Установите зависимости заново:
+npm update
 npm install
 
 //instal node
-nvm install node
+1. Install nvm:
+If you're on a Unix-based system (like macOS or Linux), you can install nvm by running the following commands in your terminal:
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install 18.17.1 
+nvm use 18.17.1  # Use this version
+
+3. Verify nvm Installation:
+nvm -v
+
+5. Reinstall Node.js Packages:
+
+rm -rf node_modules package-lock.json 
+npm install 
 
 
+<!-- <section class="main_page" id="main">
+  <div class="main_inner">
+    <div class="slider alert uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push">    
 
+      <ul class="uk-slideshow-items slider-list">
+          <li>
+            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+              <img src="../../img/main2.jpg" uk-cover>
+              </div>
+              <div class="uk-position-bottom uk-position-medium uk-text-center uk-light inner_content">
+                <h2 class="uk-margin-remove"> <span class="accent-text">DС</span>C Sal<span class="accent-text">o</span>n</h3>
+                  <p class="uk-margin-remove">
+                    <span class="accent-text">Дуже серьозний</span> сал<span class="accent-text">о</span>н, краса це ти, але це не точно, бо ти ще досі не була у нас</p>
+                <div class="slider_arrow_inner">
+                  <a class="arrow-left" href uk-icon="icon: arrow-left" uk-slideshow-item="previous"></a>
+                  <a class="arrow-right" href uk-icon="icon: arrow-right" uk-slideshow-item="next"></a>
+                </div>
+              </div>
+          </li>
+          <li>
+            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+              <img src="../../img/main1.png" alt="" uk-cover>
+            </div>
+            <div class="uk-position-bottom uk-position-medium uk-text-center uk-light inner_content">
+              <h2 class="uk-margin-remove"> <span class="accent-text">DС</span>C Sal<span class="accent-text">o</span>n</h3>
+                <p class="uk-margin-remove">
+                  <span class="accent-text">Дуже серьозний</span> сал<span class="accent-text">о</span>н, краса це ти, але це не точно, бо ти ще досі не була у нас</p>
+              <div class="slider_arrow_inner">
+                <a class="arrow-left" href uk-icon="icon: arrow-left" uk-slideshow-item="previous"></a>
+                <a class="arrow-right" href uk-icon="icon: arrow-right" uk-slideshow-item="next"></a>
+              </div>
+            </div>
+          </li>
 
+      </ul> 
+
+    </div>
+</div>
+</section> -->
 
 //main 
 <body>

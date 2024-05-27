@@ -1,69 +1,55 @@
-.main_page {
-  height: 100dvh;
-  width: 100%;
-  position: relative;
-  &::after{
-    content: "";
-    height: 100%;
-    width: 34%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background: use("accent");
-    opacity: .8;
-    z-index: -1;
+.main-page{
+  .main-wrapper{
+    display: flex;
+    align-items: center;
   }
-  .uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
-    fill: transparent;
+  h1{
+    color: black;
+    @include fontSize(127);
+    font-weight: 600;
+    margin: 0 auto !important;
+    width: fit-content;
+    font-family: "Dancing Script", cursive;
+
   }
-  .slider-list{
-    .inner_content{
-      bottom: 25%;
-      color: black;
-      width: 50%;
-      margin-left: auto;
-      backdrop-filter: blur(3px);
-      padding: 20px 0;
-      transform: translateY(-50%);
+  p{
+    @include fontSize(37);
+    line-height: 0;
+    font-weight: 500;
+    margin: auto;
+    max-width: inherit;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
 
-      .uk-margin-remove {
-        margin: 0;
-      }
-
-      h2{
-        color: black;
-        @include fontSize(87);
-        font-weight: 600;
-        margin: 0;
-      }
-
-      p{
-        @include fontSize(22);
-        font-weight: 500;
-        margin: auto;
-      }
+  .main-text{
+    padding: 0 150px;
+    flex: 1;
+    .main-logo{
+      width: rem(500px);
+      margin: auto;
+      display: flex;
+      transform: translateZ(1px);
+      img{
+        max-width: 100%;
+        height: auto;
+        cursor: pointer; 
+        display: inline-block;
+        animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 2) alternate;
+      } 
     }
   }
 
-  img {
-    object-fit: cover;
-    width: 70%;
-    height: 85%;
-    left: 0%;
-    top: 10%;
-  }
-  .slider_arrow_inner{
-    width: 70.5%;
-    margin-left: auto;
+  .img-main{
+    height: 100dvh;
+    flex: 0 1 40%;
+    overflow: hidden;
+    position: relative;
+    img{
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
   }
 }
-@include mediaMax(768px){
-  .main_page {
 
-  }
-}
-@include mediaMax(450px){
-  .main_page {
-
-  }
-}

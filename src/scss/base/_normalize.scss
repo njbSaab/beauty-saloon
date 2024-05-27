@@ -1,5 +1,5 @@
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -31,11 +31,13 @@ html {
 body {
   color: use("dark");
   background: use("light");
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
   margin-bottom: 0 !important;
   color: use("light");
+  font-family: "Brown Sugar Bold";
 }
 
 ul {
@@ -46,6 +48,10 @@ ul {
 a {
   cursor: pointer;
   color: inherit !important;
+  font-family: "Montserrat", sans-serif;
+}
+p{
+  font-family: "Montserrat", sans-serif;
 }
 .icon {
   width: 35px;

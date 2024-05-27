@@ -2,11 +2,21 @@
 @include define-color("black", black);
 @include define-color("light", #fff);
 @include define-color("accent", #00613e);
+@include define-color("accent-dark", #192f28);
 @include define-color("accent-opacity", #00613d8e);
 @include define-color("accent-transparent", #00613d37);
+@include define-color("danger", red);
 // @include gradient("main-gra", linear-gradient(45deg, black, transparent))
 // background: linear-gradient(90deg, #000, #555, #aaa, #fff);
 
 //   background-color: color("dark", $a: 0.5); // 50% прозрачность
 //    background-color: color("light", $a: 0.5)
 // background: linear-gradient(270deg ,rgba(0,0,0, .5) 0,rgba(255,255,255) 100%);
+
+@font-face {
+    font-family: 'BrownSugar';
+    src: url('../../fonts/Brown Sugar.otf') format('opentype'),
+         url('../../fonts/Brown Sugar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

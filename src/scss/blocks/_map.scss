@@ -1,10 +1,70 @@
 .map {
   background: use("light");
-  padding: rem(80px 0 100px);
+  padding: rem(80px 0 0);
 
   .title_group {
     text-align: end;
     margin-bottom: rem(20px);
+    display: grid;
+    gap: 0 2.5%;
+    grid-template-columns: 67.5% 30%;
+    p{
+      margin: 0;
+      text-align: end;
+    }
+
+    h2{
+      grid-column: 1/2;
+      grid-row: 1 / 3;
+      height: fit-content;
+      margin: auto 0;
+    }
+    .title_description{
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    .tips{
+      grid-column: 2/3;
+      grid-row: 1/4;
+      transition: .3s ease-in;
+      .tips-list{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        height: 100%;
+        .image-wrapp{
+          width: 120px;
+          height: 80px;
+        }
+        p{
+          line-height: 1;
+          text-align: center;
+          color: use(danger);
+          padding-bottom: 20px;
+          transition: .3s ease-in;
+
+        }       
+      }
+
+      &:hover{
+        transition: .3s ease-in;
+          p{
+            transition: .3s ease-in;
+            color: use(accent);
+            text-decoration: none;
+            outline: none;
+          }
+          a{
+            text-decoration: none;
+          }
+        }
+    }
+    ul{
+      padding-left: 0;
+      margin: 0;
+    }
   }
 
   .title_main {
@@ -12,13 +72,12 @@
     margin-bottom: rem(10px);
   }
 
-  /* Стиль для описания */
   .title_description {
     color: use("dark");
   }
   .iframe_wrapper{
     position: relative;
-
+    margin-top: 20px;
     &::after{
         content: '';
         width: 100%;
@@ -30,21 +89,14 @@
         z-index: -1;
     }
   }
+  
   iframe {
     width: 100%;
   }
 
-  .tips-list {
-    display: flex;
-    justify-content: flex-end;
-    gap: rem(6px);
-    .uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
-      fill: use("light") !important;
-    }
-  }
   .map_wrapper {
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns:1fr;
     gap: rem(48px);
     align-items: center;
     text-align: center;
@@ -56,9 +108,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-  .tips {
-    padding: rem(24px 0);
-  }
+
 }
 
 @include mediaMax(768px){
@@ -87,6 +137,7 @@
     }
   }
 }
+
 @include mediaMax(450px){
   .map{
     padding: 0 0 40px;

@@ -1,52 +1,23 @@
-<section class="main_page" id="main">
-  <div class="main_inner">
-    <div class="slider alert uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push">    
-
-      <ul class="uk-slideshow-items slider-list">
-          <li>
-            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-              <img src="../../img/main/1-1.png" alt="" uk-cover>
-              </div>
-              <div class="uk-position-bottom uk-position-medium uk-text-center uk-light inner_content">
-                <h2 class="uk-margin-remove">DСC Salon</h3>
-                <p class="uk-margin-remove">Дуже серьозний салон, краса це ти, але це не точно, бо ти ще досі не була у нас</p>
-              </div>
-          </li>
-          <li>
-            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-              <img src="../../img/main/1.png" alt="" uk-cover>
-            </div>
-            <div class="uk-position-bottom uk-position-medium uk-text-center uk-light inner_content">
-              <h2 class="uk-margin-remove">Bottom</h2>
-              <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </li>
-          <li>
-            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-              <img src="../../img/main/2.png" alt="" uk-cover>
-            </div>
-            <div class="uk-position-bottom uk-position-medium uk-text-center uk-light inner_content">
-              <h2 class="uk-margin-remove">Bottom</h2>
-              <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </li>
-          <li>
-            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-              <img src="../../img/main/3.png" alt="" uk-cover>
-            </div>
-            <div class="uk-position-bottom uk-position-medium uk-text-center uk-light inner_content">
-              <h2 class="uk-margin-remove">Bottom</h2>
-              <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </li>
-          
-      </ul>
-      <div class="slider_arrow_inner">
-        <a class="arrow-left" href uk-icon="icon: arrow-left" uk-slideshow-item="previous"></a>
-        <a class="arrow-right" href uk-icon="icon: arrow-right" uk-slideshow-item="next"></a>
-      </div>
-
-
+<section class="main-page">
+  <div class="main-wrapper ">
+    <div class="img-main">
+      <img src="../../img/main/main.jpeg">
     </div>
-</div>
+    <div class="main-text">
+      <div class="main-logo">
+        <img src="../../img/logo-dcc.svg" alt="logo" onclick="startAnimation(this)">
+      </div>
+      
+      <h1 class="uk-margin-remove font-alter"
+      uk-scrollspy="cls: uk-animation-fade; repeat: false; delay: 300; duration: 1000">
+          DCC Salon
+      </h1>
+        <p class="uk-margin-remove font-alter"
+        uk-scrollspy="cls: uk-animation-fade; repeat: false; delay: 1000; duration: 2000">
+         Дуже Серйозний салон
+        </p>
+    </div>
+  </div>
 </section>
+
+

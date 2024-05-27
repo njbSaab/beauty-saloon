@@ -4,7 +4,6 @@
     }
 
     .overlay {
-        display: none;
         height: 95vh;
         width: 100%;
         position: fixed;
@@ -13,6 +12,8 @@
         top: rem(80px);
         background: linear-gradient(360deg,rgba(0,0,0, 1) 30%, rgba(0,0,0, .5) 80%, transparent);
         overflow-x: hidden; 
+        transition: opacity .4s ease-in, visibility .8s ease-in;
+        visibility: collapse;
     }
   
     .overlay-content {
@@ -44,7 +45,14 @@
         font-size: 60px;
     }
 }
-
+.btn-mobile.menu-trigger{
+    display: none;
+}
+@include mediaMax(1024px){
+    .btn-mobile{
+        display: block;
+    }
+}
 @include mediaMax(450px){
     .mobile-menu{      
         .menu-btn-wrapper{

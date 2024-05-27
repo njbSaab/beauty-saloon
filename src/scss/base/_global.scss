@@ -1,3 +1,4 @@
+
 button,
 .nav-item a{
   transition: filter;
@@ -8,6 +9,9 @@ button:is(:hover, :focus-visible){
 }
 button:active{
   filter: brightness(85%);
+}
+h3{
+  font-family: "Montserrat", sans-serif !important;
 }
 .transparent{
   background: transparent;
@@ -21,11 +25,16 @@ button:active{
   text-align: center;
   @include fontSize(36);
   margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 .title_main {
   @include fontSize(45);
   text-transform: initial;
   margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+.font-alter{
+  font-family: "Dancing Script", cursive;
 }
 .dark {
   color: use("dark");
@@ -39,11 +48,19 @@ button:active{
 .dark-opacity {
   color: use("dark", $a: 0.5);
 }
+.accent-text{
+  color: use("accent-dark");
+}
+#bwcrm-widget-action .bwcrm-btn-widget-actio{
+  padding: 14px 30px;
+  background: use("accent-dark");
+}
+
 .title_description,
 .title_description-light {
   @include fontSize(28);
   @include fw(300);
-  text-wrap: pretty
+  text-wrap: pretty;
 }
 .splide__progress__bar {
   height: 3px;
@@ -63,10 +80,11 @@ button:active{
   z-index: 1;
 }
 
-.uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
+.header .uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
   stroke: currentcolor;
   fill: black !important;
 }
+
 .person_name{
     @include fontSize(24); 
     @include fw(500);
@@ -77,6 +95,20 @@ button:active{
     margin: 0;
     opacity: .5;
     @include fontSize(16); 
+}
+
+.placeholder-img {
+  background-image: url('../../img/masters/0.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.specialist-avatar {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background: use(accent-opacity);
 }
 
 @include mediaMax(1024px){
@@ -154,6 +186,17 @@ button:active{
   }
 }
 
+@media screen and (min-width: 540px) {
+  #bwcrm-widget-action .bwcrm-btn-widget-action {
+      line-height: 100%;
+      font-size: 18px;
+      font-weight: 400;
+      padding: 14px 20px !important;
+      background: use("accent-dark") !important;
+
+  }
+}
+
 .hover-circle {
   position: relative;
   &::before{
@@ -169,4 +212,23 @@ button:active{
 }
 .nav-item:hover .hover-circle {
   opacity: 0.7; 
+}
+.masters .master_card_body ul svg{
+  padding-bottom: 2px;
+}
+
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
 }
