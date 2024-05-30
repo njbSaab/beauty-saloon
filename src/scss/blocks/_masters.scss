@@ -4,30 +4,41 @@
   backdrop-filter: blur(5px);
   .title {
     padding: rem(80px 0);
+    color: inherit;
   }
   .content-items-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 30%);
-    gap: 0;
+    display: flex;
+    gap: 50px;
     padding-bottom: rem(80px);
     justify-content: center;
     align-items: center;
     justify-items: start;
   }
+  .uk-container>:last-child {
+    max-width: 920px;
+    margin-bottom: 0;
+    margin: 0 auto;
+    gap:20px
+}
   .master-card{
     width: 80%;
     transition: .3s ease-in-out;
 
     &:hover{
       transition: .3s ease-in-out;
+
+      
       .startstoptime-list{
         color: use(accent);
         transition: .3s ease-in-out;
       }
-      .worked-title:first-child{
+      .worked-title:last-child{
         color: use(accent);
         transition: .3s ease-in-out;
       }
+    }
+    .worked{
+      justify-content: center;
     }
     .uk-button-link{
       position: relative;
@@ -67,6 +78,7 @@
   .uk-card-body {
     padding: 15px 20px 0;
     cursor: pointer;
+    height: 200px;
     p{
       margin: 0 0 10px 0;
       text-align: center;
@@ -75,7 +87,7 @@
     .work-time{
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-around;
     }
     .startstoptime-list{
       display: flex;
@@ -86,8 +98,8 @@
       transition: .3s ease-in-out;
       gap: 5px;
       .start span{
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
       }
       .start:first-child{
         color: use(accent-opacity);
@@ -118,6 +130,7 @@
   }
   .master_card_body ul{
     display: flex;
+    justify-content: center;
     font-size: 18px;
     gap: 5px;
     margin-top: 10px;
@@ -126,7 +139,7 @@
       align-items: center;
       gap: 5px;
     }
-    .worked-title:first-child{
+    .worked-title:last-child{
       color: use(accent-opacity);
       transition: .3s ease-in-out;
 
@@ -198,21 +211,68 @@
     position: relative;
   }
 }
-@include mediaMax(850px){
+@include mediaMax(1024px){
+  .masters .uk-container>:last-child{
+    width: 750px;
+  }
   .masters{
-    .content-items-grid{
-      gap: rem(96px 96px);
-      grid-template-columns: repeat(2, rem(200px));
+    .content-items-grid {
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: repeat(2, 40%);
+      gap: 20px 20px;
     }
   }
+  .masters .master-card {
+    width: 100%;
+    transition: .3s ease-in-out;
+  }
+}
+
+@include mediaMax(850px){
 }
 @include mediaMax(768px){
   .masters{
     .title{
       padding: 40px 0;
     }
+    .content-items-grid {
+      max-width: 100%;
+    }
+    .uk-container>:last-child {
+      max-width: 100%;
+    }
+    .uk-card-title {
+      font-size: 1.2rem;
+    }
+    .img-wrapper-card {
+      width: 60px;
+      height: 75px; 
+    }
+    .master_card_body ul{
+      gap: 5px;
+      margin: 0 0 10px;
+    }
+    .uk-card-body .startstoptime-list{
+      font-size: 15px;
+    }
+    .uk-card-body {
+      height: auto;
+    }
+    .master_card_body ul{
+      flex-wrap: wrap;
+    }
   }
 }
+@include mediaMax(670px){
+  .masters{
+    .uk-container>:last-child {
+      max-width: 100%;
+      grid-template-columns: 45%;
+      }
+    }
+}
+
 @include mediaMax(450px){
   .masters{
     .title{
@@ -230,6 +290,12 @@
     .img_wrappaer{
       max-width: 150px;
     }
+    .uk-container>:last-child {
+      max-width: 289px;
+      grid-template-columns: 1fr;
+      padding-bottom: 30px;
+    }
   }
 }
+
 

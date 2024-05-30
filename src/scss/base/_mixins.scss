@@ -1,6 +1,48 @@
 @use "sass:math";
 
 // $scrollbar-color: #F8F8F8; // Цвет полосы прокрутки
+@function get-vw($px) {
+  $vw-context: ($layout-width * 0.01) * 1px; // Контекст вьюпортных единиц
+  @return math.div($px, $vw-context) * 1vw;
+}
+
+// Функция для получения значений вьюпортных единиц (vw) на основе пикселей с учетом ширины макета
+@function get-vw-by-layout($px, $layout: $layout-width) {
+  $vw-context: ($layout * 0.01) * 1px; // Контекст вьюпортных единиц
+  @return math.div($px, $vw-context) * 1vw;
+}
+
+//переводит шрифт из пикселей в адаптивный шрифт
+@mixin resp-font-size(
+  $target-size,
+  $max-font-size: null,
+  $base-font-size: 16,
+  $viewport-width: 1440
+) {
+  // Вычисление коэффициента для vw с использованием math.div()
+  $vw-coefficient: math.div($target-size * 100, $viewport-width);
+  // Вычисление rem части с использованием math.div()
+  $rem-part: math.div(
+    $target-size - ($vw-coefficient * $viewport-width * 0.01),
+    $base-font-size
+  );
+  // Установка максимального размера шрифта, если он не предоставлен
+  $max-size: if($max-font-size, $max-font-size, $target-size);
+  // Вычисление максимального размера шрифта в rem
+  $max-font-size-rem: math.div($max-size, $base-font-size);
+
+  font-size: clamp(
+    #{$rem-part}rem,
+    calc(#{$rem-part}rem + #{$vw-coefficient}vw),
+    #{$max-font-size-rem}rem
+  );
+}
+
+// Функция для конвертации пикселей в %
+@function resp($px, $base-width: 1440) {
+  $percentage: math.div($px, $base-width) * 100%;
+  @return calc(#{$percentage}); // Вычисление процента от базовой ширины
+}
 
 // Функция для получения значений вьюпортных единиц (vw) на основе пикселей
 @function get-vw($px) {

@@ -26,6 +26,8 @@
     height: auto;
     display: flex;
     transform: translateZ(1px);
+    position: relative;
+    z-index: -1;
     img{
       cursor: pointer; 
       display: inline-block;
@@ -71,15 +73,18 @@
 }
 @include mediaMax(450px){
   .footer{
-    padding: 80px 0;
+    padding: 40px 0;
     .footer_wrapper{
       flex-direction: column;
-      gap: 48px;
+      gap: 20px;
       align-items: center;
     }
     .social_group{
       flex-direction: row;
       gap: 50px;
+    }
+    .site-footer__col{
+      width: 250px;
     }
   }
 }

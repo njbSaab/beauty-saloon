@@ -91,7 +91,6 @@
           background: use(accent-dark);
           width: 5px;
           height: 5px;
-          border-radius: 50%;
         }
       }
     }
@@ -100,18 +99,55 @@
 @include mediaMax(1024px){
   .about-salon{
     .slider-wrapper{
-      flex: 1 0 50%;
+      flex: 1 0 25%;
     }
+    .content-wrapper{
+      flex-direction: column;
+    }
+    .title_description{
+      width: 100%;
+      text-align: left;
+    }
+    .title_description.light-opacity ul li::after {
+      left: -25px;
+    }
+  }
+}
+@include mediaMax(768px){
+  .about-salon{
+    .title {
+      padding: 60px 0 40px;
+    }
+   .title_description.light-opacity h3 {
+      font-size: 17px;
+      padding: 0 5px;
+    }
+    .title_description.light-opacity ul{
+      font-size: 16px;
+      color: white;
+      opacity: .9;
+    }
+    .title_description.light-opacity ul li::after {
+      left: -10px;
+    }
+
   }
 }
 @include mediaMax(450px){
   .about-salon{
+    padding-bottom: 0;
     .title{
       padding: px(40px 0 20px);
     }
     .content-wrapper{
-      display: flex;
-      flex-direction: column;
+      gap: 20px;
+    }
+    .uk-container{
+      padding: 0;
+    }
+    .title_description{
+      max-width: 100%;
+      padding: 0 15px;
     }
     .slider-wrapper::after {
       content: "";

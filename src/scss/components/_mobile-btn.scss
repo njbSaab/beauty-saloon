@@ -7,7 +7,8 @@
     background: linear-gradient(270deg ,rgba(0,0,0, .5) 100%,rgba(255,255,255) 0%);   
   }
 }
-#menu-desktop{
+#menu-desktop,
+#menu-mobile{
   span{
     transition: .3s ease-in;
   }
@@ -61,7 +62,8 @@
 .btn-wrapper{
   z-index: 1;
 }
-#menu-desktop::after {
+#menu-desktop::after,
+#menu-mobile::after {
   position: absolute;
   top: 100%;
   left: 95%;
@@ -74,12 +76,15 @@
   border: 4px solid transparent;
   transition: all .5s ease;
 }
-#menu-desktop.active span:nth-of-type(1) {
+#menu-desktop.active span:nth-of-type(1),
+#menu-mobile.active span:nth-of-type(1)
+ {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
   transition: all .5s ease;
 }
-#menu-desktop.active span:nth-of-type(2) {
+#menu-desktop.active span:nth-of-type(2),
+#menu-mobile.active span:nth-of-type(2) {
   left: 60%;
   opacity: 0;
   animation: active-menu12-bar02 .8s forwards;
@@ -89,13 +94,15 @@
     height: 0;
   }
 }
-#menu-desktop.active span:nth-of-type(3) {
+#menu-desktop.active span:nth-of-type(3),
+#menu-mobile.active span:nth-of-type(3) {
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
   transition: all .5s ease;
 
 }
-#menu-desktop.active::after {
+#menu-desktop.active::after,
+#menu-mobile.active::after {
   animation: active-menu12 .4s .25s forwards;
 }
 @keyframes active-menu12 {
@@ -122,6 +129,9 @@
 @include mediaMax(1024px) {
     .menu-trigger{
     display: flex;
+    }
+    .header .btn-desktop{
+      display: none;
     }
 }
   

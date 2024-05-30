@@ -3,30 +3,8 @@
 }
 html {
   scroll-behavior: smooth;
-    @include mediaMin(1501){
-      font-size: 18px
-      }
-    @include mediaMinMax(1401, 1500) {
-      font-size: 17px
-    } 
-    @include mediaMinMax(1101, 1400) {
-      font-size: 16px
-    } 
-    @include mediaMinMax(801, 1200){
-      font-size: get-vw-by-layout(15.5px, 1024)
-    } 
-    @include mediaMinMax(701, 800) {
-      font-size: get-vw-by-layout(15.5px, 768)
-    }
-    @include mediaMinMax(501, 700) {
-      font-size: get-vw-by-layout(15.5px, 600)
-    } 
-    @include mediaMinMax(401, 600) {
-      font-size: get-vw-by-layout(15.5px, 415)
-    }
-    @include mediaMinMax(0, 400){
-      font-size: get-vw-by-layout(15.5px, 375)
-      }
+  font-size: 100% !important;
+
 }
 body {
   color: use("dark");

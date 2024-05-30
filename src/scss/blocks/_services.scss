@@ -4,21 +4,6 @@
   position: relative;
   padding: rem(100px 0);
   overflow: visible;
-  // &::before{
-  //   position: absolute;
-  //   content: "";
-  //   background-image: url(../../img/logo-dcc.svg);
-  //   width: 500px;
-  //   height: 500px;
-  //   left: 0%;
-  //   top: 0%;
-  //   transform: translate(-20%, -50%);
-  //   z-index: 0;
-  //   -o-object-fit: cover;
-  //   background-size: cover;
-  //   background-repeat: no-repeat;
-  //   opacity: .8;
-  // }
 
   .title-group {
     text-align: start;
@@ -88,7 +73,8 @@
     padding: rem(0 0 20px);    
     gap: rem(12px);
     position: absolute;
-    width: 100%;
+    width: 85%;
+    text-wrap: nowrap;
     bottom: 7%;
     left: rem(20px);
     justify-content: flex-start;
@@ -100,7 +86,7 @@
 
     .services-item-descrption-title{
         margin: 0;
-        @include fontSize(24);
+        @include resp-font-size(22);
         max-width: rem(200px);
         overflow: hidden;
     }
@@ -167,12 +153,36 @@
     transform: translate(-80%, -50%) scale(1.2);
   }
 }
-
-@include mediaMax(1150px){
+@media (max-width: 1680px) {
+  .services{
+    .title-group{
+      transform: translateX(25%);
+    }
+    .services-list::before{
+      max-width: 350px;
+      width: 100%;
+      max-height:350px;
+      height: 100%;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .services{
+    .title-group{
+      transform: translateX(0%);
+    }
+    .services-list::before{
+      max-width: 250px;
+      max-height:250px;
+    }
+  }
+}
+@include mediaMax(1250px){
   .services{
     padding: rem(60px 0);
     .services-grid {
-      gap: rem(12px);
+      gap: rem(32px);
+      grid-template-columns: 1fr 30%;
     }
     .services-list{
       grid-template-columns: repeat(2, minmax(150px, 300px)); 
@@ -180,38 +190,90 @@
     }
     .services-item-descrption-title{
       margin: 0;
-      @include fontSize(24);
+      @include resp-font-size(28);
       max-width: rem(200px);
       overflow: hidden;
       opacity: 1;
+    }
+    .title{
+      @include resp-font-size(44);
+    }
+    .title-group p{
+      @include resp-font-size(28);
+      margin-top: 0;
     }
     span{
         @include fontSize(48)
     }
   }
 }
+
+@include mediaMax(1024px){
+  .services{
+    .services-grid{
+      grid-template-columns: 100%;
+    }
+    .title-group{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 10px;
+      background: linear-gradient(45deg, #192f28, transparent);
+    }
+    .services-item-description {
+      opacity: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .services-item-description .services-item-descrption-title {
+      width: fit-content;
+      font-size: 18px;
+    }
+    .services-item::after {
+      height: 100%;
+    }
+    
+    .services-item-descrption-title{
+      background: linear-gradient(45deg, #00613d25, transparent);
+      backdrop-filter: blur(5px);
+    }
+
+  }
+}
 @include mediaMax(768px){
   .services{
+    &::after{
+      width: 80%;
+      height: 100%;
+    }
+    .title-group{
+      width: 50%;
+    }
     .services-grid {
       display: flex !important;
       flex-direction: column-reverse;
     }
-    .title-group {
-      &::before{
-              height: 130vh !important;
-              background: linear-gradient(90deg, rgba(255, 255, 255,), rgba(0, 0, 0, .1)) !important;
+    .services-list{
+      grid-template-columns: repeat(2, 1fr); 
+      gap: calc(48 / 1400 * 100%);
+      width: 100%;
+    }
+    .title-group{
+      width: 75%;
+      margin-right: auto;
+      p{
+        margin: 0;
       }
     }
     .services-item {    
-      &::after {
-        transform: translate(0%, 0%);
-      }
       .services-item-description{
         opacity: 1;
         bottom: 0;
         left: 50%;
         transform: translate(-50%,-10%);
-        width: min-content;
+        width: fit-content;
         height: 80px;
       }
     }
@@ -219,11 +281,26 @@
 }
 @include mediaMax(450px){
   .services{
-      padding: rem(40px 0);
+    overflow: hidden;
+      padding: rem(40px 0 0);
+      .services-grid{
+        gap: 40px;
+      }
+      .uk-container{
+        padding: 0;
+      }
       .title-group{
+        width: 100%;
+        position: static;
+        transform: translate(0);
+        .title{
+          font-size: 22px;
+        }
+        p{
+          font-size: 15px;
+        }
         &::before{
           top: -50%;
-         
         }
       }
       .title{
@@ -233,7 +310,11 @@
         margin-top: 30px;
       }
       .services-item-descrption-title{
-        font-size: 20px !important;
+        font-size: 23px !important;
+      }
+      .services-list{
+        grid-template-columns: 100%;
+        gap: 0px;
       }
   }
 }
@@ -258,3 +339,4 @@
     transform:scale(1.0);
   }
 }
+

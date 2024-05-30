@@ -134,16 +134,16 @@ h3{
   .person-review{
     @include fontSize(13); 
   }
-  
-
 }
 @include mediaMax(768px){
   .title {
     padding: rem(40px 0);
     text-align: center;
-    @include fontSize(28);
+    @include fontSize(22);
     margin: 0;
   }
+  
+
   .title_main {
     @include fontSize(32);
   }
@@ -185,15 +185,21 @@ h3{
     @include fontSize(13); 
   }
 }
-
+#bwcrm-widget-action .bwcrm-btn-widget-action{
+  background-color: #192f28 !important;
+  padding: 14px 20px !important;
+  border-radius: 0% !important;
+}
+#bwcrm-widget-action {
+  right: 40px !important;
+}
 @media screen and (min-width: 540px) {
   #bwcrm-widget-action .bwcrm-btn-widget-action {
       line-height: 100%;
       font-size: 18px;
       font-weight: 400;
       padding: 14px 20px !important;
-      background: use("accent-dark") !important;
-
+      background-color: #192f28 !important;
   }
 }
 

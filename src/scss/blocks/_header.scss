@@ -2,8 +2,6 @@
   z-index: 99;
   width: 100vw;
   position: fixed;
-  background: linear-gradient(180deg, transparent);
-  backdrop-filter: blur(3px);
   height: 60px;
   .logo_wrapp {
     display: flex;
@@ -43,6 +41,7 @@
     display: flex;
     align-items: center;
     gap: rem(12px);
+    justify-content: center;
   }
 
   .uk-icon-button {
@@ -174,9 +173,47 @@
   .header{
     padding: rem(20px 0);
     background: transparent;
+    transition: .2s ease-in;
+    position: fixed;
+    &::after{
+      content: '';
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(360deg, rgba(0,0,0, .6), transparent);
+      transition: opacity .2s ease-in; 
+      position: absolute; 
+    }
+    &.active::after{
+      opacity: 1;
+      transition: opacity .2s ease-in;
+    }
     .nav-item{
       display: none;
     }
+    .logo_wrapp{
+      margin-top: 0;
+    }
+    .logo_wrapp svg{
+      width: rem(75px);
+    }
+    .uk-navbar-right::after{
+      background: transparent;
+    }
+    #menu-desktop{
+      display: none;
+    }
+    #menu-mobile{
+      display: block;
+    }
+    .top-social.nav-bar-socila {
+      padding-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
   }
 }
 @include mediaMax(768px) {
@@ -199,6 +236,9 @@
 }
 @include mediaMax(450px){
   .header{
+    .logo_wrapp svg{
+      width: rem(50px);
+    }
     .uk-navbar-nav{
       .btn-header{
         display: none;

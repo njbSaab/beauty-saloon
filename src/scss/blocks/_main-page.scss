@@ -14,7 +14,7 @@
   }
   p{
     @include fontSize(37);
-    line-height: 0;
+    line-height:  100%;
     font-weight: 500;
     margin: auto;
     max-width: inherit;
@@ -24,7 +24,7 @@
 
   .main-text{
     padding: 0 150px;
-    flex: 1;
+    flex: 1 1 20%; 
     .main-logo{
       width: rem(500px);
       margin: auto;
@@ -41,15 +41,79 @@
   }
 
   .img-main{
-    height: 100dvh;
-    flex: 0 1 40%;
+    height: 100%;
+    flex: 1;
     overflow: hidden;
     position: relative;
     img{
-      position: absolute;
       width: 100%;
       height: auto;
     }
   }
 }
 
+@media (min-width: 1680px){
+ .main-page{
+  .img-main{
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+    flex: 10%;
+    img{
+      width: 100%;
+      position: absolute;
+      height: auto;
+    }
+  }
+ } 
+}
+@media (max-width: 1440px) {
+  .main-page{
+    h1{
+      @include resp-font-size(107);
+
+    }
+    p{
+      @include resp-font-size(37);
+      padding-bottom: rem(100px);
+    }
+    .main-text{
+      padding:0 resp(50);
+      flex: 1;
+      .main-logo{
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+    }
+    .img-main{
+      max-height: 100dvh;
+    }
+  }
+}
+@media (max-width: 1200px){
+  .main-page{ 
+    .main-text{ 
+      .main-logo{
+        padding-top: 70px;
+      }
+    }
+  }
+}
+@media (max-width: 1024px){
+    .main-page {
+      .img-main{
+         display: none;
+      }
+      h1{
+        font-size: 42px;
+      }
+      p{
+        font-size: 22px;
+      }
+      .main-text .main-logo {
+        padding-top: 150px;
+        max-width: 350px;
+      }
+    }
+}

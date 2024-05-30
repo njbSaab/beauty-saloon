@@ -41,10 +41,14 @@
         .person_wrapper {
             gap: 12px;
         }
+        .content-item {
+            flex: 1 0 55%;
+        }
     }
 }
 @include mediaMax(450px){
     .reviews{
+        margin-bottom: 0;
         .person-review{
             font-size: 12px;
         }
